@@ -10,7 +10,7 @@ const Footer = () => {
         </div>
         {/* Web Info */}
         <div className="text-sm">
-          <p>Created by Pusaka Manggala</p>
+          <p>Pusaka Manggala</p>
           <p>Bandung, Indonesia 2023</p>
         </div>
       </div>
