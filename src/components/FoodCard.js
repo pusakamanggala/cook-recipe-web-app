@@ -9,7 +9,7 @@ const FoodCard = ({ recipe }) => {
 
   return (
     <Link to={`/recipe/${recipe.id}`}>
-      <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-lg relative">
+      <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-lg relative hover:underline">
         {/* Food Image */}
         <img
           className="h-48 w-full object-cover"
