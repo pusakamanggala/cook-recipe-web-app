@@ -2,7 +2,9 @@ import React from "react";
 
 const FoodCard = ({ recipe }) => {
   // Construct the image URL using the Spoonacular API's image base URL and the image file name from the recipe object
-  const imageUrl = `https://spoonacular.com/recipeImages/${recipe.image}`;
+  const imageUrl = recipe.image
+    ? `https://spoonacular.com/recipeImages/${recipe.image}`
+    : "https://via.placeholder.com/640x360?text=No+Image";
 
   return (
     <div className="w-full bg-white rounded-xl overflow-hidden shadow-lg relative">
