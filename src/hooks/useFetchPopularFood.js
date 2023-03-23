@@ -15,6 +15,7 @@ const useFetchPopularFood = (pageNumber, pageSize) => {
   };
   return useQuery(["popularFood", pageNumber], fetchPopularFood, {
     refetchOnWindowFocus: false,
+    staleTime: 60000, // cache for 1 minute
   });
 };
 
