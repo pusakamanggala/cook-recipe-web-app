@@ -50,33 +50,38 @@ const PopularFoods = () => {
           Popular Food Recipe
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  md:px-28 px-10 ">
-        {data.map((recipe) => (
-          <FoodCard key={recipe.id} recipe={recipe} />
-        ))}
+      {/* Food Card */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  md:px-28 px-10">
+        {data &&
+          data.map((recipe) => <FoodCard key={recipe.id} recipe={recipe} />)}
       </div>
-      <div className="flex justify-center md:p-10 p-6">
-        <button
-          onClick={handlePrevPage}
-          disabled={pageNumber === 1}
-          className={`font-bold py-2 px-4 rounded mr-2 text-white ${
-            pageNumber === 1 ? "bg-gray-400 " : "bg-gray-600 hover:bg-gray-700 "
-          } `}
-        >
-          Prev
-        </button>
-        <button
-          onClick={handleNextPage}
-          disabled={data.length < pageSize}
-          className={`font-bold py-2 px-4 rounded mr-2 text-white ${
-            data.length < pageSize
-              ? "bg-gray-400 "
-              : "bg-gray-600 hover:bg-gray-700 "
-          } `}
-        >
-          Next
-        </button>
-      </div>
+      {/* Prev and Next Button */}
+      {data ? (
+        <div className="flex justify-center md:p-10 p-6">
+          <button
+            onClick={handlePrevPage}
+            disabled={pageNumber === 1}
+            className={`font-bold py-2 px-4 rounded mr-2 text-white ${
+              pageNumber === 1
+                ? "bg-gray-400 "
+                : "bg-gray-600 hover:bg-gray-700 "
+            } `}
+          >
+            Prev
+          </button>
+          <button
+            onClick={handleNextPage}
+            disabled={data.length < pageSize}
+            className={`font-bold py-2 px-4 rounded mr-2 text-white ${
+              data.length < pageSize
+                ? "bg-gray-400 "
+                : "bg-gray-600 hover:bg-gray-700 "
+            } `}
+          >
+            Next
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };
