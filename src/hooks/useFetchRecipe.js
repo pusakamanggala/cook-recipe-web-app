@@ -1,7 +1,10 @@
 import { useQuery } from "react-query";
 
 const useFetchRecipe = (recipeId) => {
-  const API_KEY = "38b721c685934201a747226e4d5f4cb9";
+  //fe655071ca384582b6ae2c37fe1fbc7f
+  //38b721c685934201a747226e4d5f4cb9
+  //31eba22ff8524ef1b164cd9fe83b2322
+  const API_KEY = "31eba22ff8524ef1b164cd9fe83b2322";
 
   const fetchRecipe = async () => {
     const response = await fetch(
