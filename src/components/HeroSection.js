@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const HeroSection = () => {
   const navigate = useNavigate();
-  const [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState("random");
 
   const handleUserInput = (e) => {
     setKeyword(e.target.value);
@@ -29,6 +29,7 @@ const HeroSection = () => {
             className="w-full bg-transparent outline-none text-gray-900"
             placeholder="What are you craving today?"
             onChange={handleUserInput}
+            required
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3">
             <svg

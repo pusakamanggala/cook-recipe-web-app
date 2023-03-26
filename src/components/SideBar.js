@@ -98,6 +98,7 @@ const SideBar = () => {
               placeholder="Find Recipes"
               value={searchTerm === "random" ? "" : searchTerm}
               onChange={handleInputChange}
+              required
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               <svg
@@ -120,6 +121,7 @@ const SideBar = () => {
         {/* End of Search Bar */}
         <div className="mt-2 ml-1">
           <h1 className="text-gray-700 font-bold ">Meal Type</h1>
+
           <div className="flex flex-wrap gap-2">
             {mealTypes.map((mealType) =>
               mealTypeBadge({
