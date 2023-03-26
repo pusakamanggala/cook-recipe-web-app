@@ -3,9 +3,19 @@ import { Link } from "react-router-dom";
 
 const FoodCard = ({ recipe }) => {
   // Construct the image URL using the Spoonacular API's image base URL and the image file name from the recipe object
-  const imageUrl = recipe.image
-    ? `https://spoonacular.com/recipeImages/${recipe.image}`
-    : "https://via.placeholder.com/640x360?text=No+Image";
+  const isValidUrl = (string) => {
+    try {
+      new URL(string);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  };
+
+  const imageUrl =
+    recipe.image && isValidUrl(recipe.image)
+      ? recipe.image
+      : `https://spoonacular.com/recipeImages/${recipe.image}`;
 
   return (
     <Link to={`/recipe/${recipe.id}`}>
