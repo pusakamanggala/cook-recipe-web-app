@@ -3,8 +3,8 @@ import Home from "./pages/Home";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Recipe from "./pages/Recipe";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import Search from "./pages/Search";
+import SideBarLayout from "./layout/SideBarLayout";
 
 const queryClient = new QueryClient();
 
@@ -12,12 +12,18 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipe/:id" element={<Recipe />} />
+          <Route
+            path="/search/:keyword/:mealType"
+            element={
+              <SideBarLayout>
+                <Search />
+              </SideBarLayout>
+            }
+          />
         </Routes>
-        <Footer />
       </Router>
     </QueryClientProvider>
   );
