@@ -11,14 +11,19 @@ import BeverageIcon from "../img/icon/beverage.png";
 import SauceIcon from "../img/icon/sauce.png";
 import MarinadeIcon from "../img/icon/marinade.png";
 import DrinkIcon from "../img/icon/drink.png";
+import { useNavigate } from "react-router-dom";
 
 const FoodCategory = () => {
+  const navigate = useNavigate();
   const MealTypeCard = ({ icon, title }) => {
     return (
-      <div className="rounded-lg shadow-lg p-4 flex flex-col justify-center items-center bg-gray-700 hover:bg-gray-500">
+      <button
+        className="rounded-lg shadow-lg p-4 flex flex-col justify-center items-center bg-gray-700 hover:bg-gray-500"
+        onClick={() => navigate(`/search/random/${title.toLowerCase()}`)}
+      >
         <img src={icon} alt="dinner" className="w-28" />
         <p className="text-white text-lg font-semibold">{title}</p>
-      </div>
+      </button>
     );
   };
 
