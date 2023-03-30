@@ -28,20 +28,7 @@ const FoodCategory = () => {
   };
 
   return (
-    <div className="flex flex-col bg-gray-200 py-6 relative">
-      {/* Wave Background */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        className="absolute md:-top-80 -top-20"
-      >
-        <path
-          fill=" #e5e7eb"
-          fillOpacity="1"
-          d="M0,192L80,208C160,224,320,256,480,250.7C640,245,800,203,960,181.3C1120,160,1280,160,1360,160L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-        ></path>
-      </svg>
-      {/* End of Wave Background */}
+    <div className="flex flex-col  py-6 bg-gray-200">
       {/* tittle */}
       <div>
         <h1 className="text-center text-2xl font-bold text-gray-700 ">
@@ -50,7 +37,7 @@ const FoodCategory = () => {
       </div>
       {/*end of tittle */}
       {/* meal category card */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:p-28 p-10  z-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:p-28 p-10  z-10 ">
         <MealTypeCard icon={DinnerIcon} title="Main Course" />
         <MealTypeCard icon={DessertIcon} title="Dessert" />
         <MealTypeCard icon={AppetizerIcon} title="Appetizer" />
