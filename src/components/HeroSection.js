@@ -15,7 +15,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="flex flex-col items-center  justify-center  min-h-screen bg-hero-background bg-cover bg-no-repeat">
+    <div className="flex flex-col items-center  justify-center  min-h-screen bg-hero-background bg-cover md:bg-center bg-no-repeat">
       {/* Web Name */}
       <div className="text-gray-700 text-center md:block hidden md:mt-6">
         <h1 className="text-7xl font-bold">Recipefy</h1>
