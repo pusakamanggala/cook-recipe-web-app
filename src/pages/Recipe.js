@@ -16,8 +16,8 @@ const Recipe = () => {
 
   if (isLoading) {
     return (
-      <div className="h-screen bg-gray-200 flex justify-center">
-        <img src={LoadIcon} alt="" />
+      <div className="h-screen bg-gray-200 flex justify-center items-center w-full">
+        <img src={LoadIcon} alt="" className="h-2/4" />
       </div>
     );
   }
