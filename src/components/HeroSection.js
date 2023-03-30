@@ -15,7 +15,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="flex flex-col items-center  justify-center  max-h-screen bg-hero-background bg-cover bg-no-repeat">
+    <div className="flex flex-col items-center  justify-center  min-h-screen bg-hero-background bg-cover bg-no-repeat">
       {/* Web Name */}
       <div className="text-gray-700 text-center md:block hidden md:mt-6">
         <h1 className="text-7xl font-bold">Recipefy</h1>
@@ -54,7 +54,7 @@ const HeroSection = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
-        className="absolute md:-bottom-8 -bottom-1"
+        className="absolute md:-bottom-8 bottom-0"
       >
         <path
           fill=" #e5e7eb"
