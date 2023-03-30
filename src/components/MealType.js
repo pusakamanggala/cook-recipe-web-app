@@ -12,13 +12,17 @@ import SauceIcon from "../img/icon/sauce.png";
 import MarinadeIcon from "../img/icon/marinade.png";
 import DrinkIcon from "../img/icon/drink.png";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const FoodCategory = () => {
   const navigate = useNavigate();
-  const MealTypeCard = ({ icon, title }) => {
+  const [isHidden, setIsHidden] = useState(true);
+  const MealTypeCard = ({ icon, title, isHidden }) => {
     return (
       <button
-        className="rounded-lg shadow-lg p-4 flex flex-col justify-center items-center bg-gray-700 hover:bg-gray-500"
+        className={`" rounded-lg shadow-lg p-4 flex flex-col justify-center items-center bg-gray-700 hover:bg-gray-500 "   ${
+          isHidden ? "hidden" : "block"
+        }`}
         onClick={() => navigate(`/search/random/${title.toLowerCase()}`)}
       >
         <img src={icon} alt="dinner" className="w-28" />
@@ -37,21 +41,61 @@ const FoodCategory = () => {
       </div>
       {/*end of tittle */}
       {/* meal category card */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:p-28 p-10  z-10 ">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:pt-28 md:px-28 p-10  z-10 ">
         <MealTypeCard icon={DinnerIcon} title="Main Course" />
         <MealTypeCard icon={DessertIcon} title="Dessert" />
         <MealTypeCard icon={AppetizerIcon} title="Appetizer" />
         <MealTypeCard icon={SaladIcon} title="Salad" />
         <MealTypeCard icon={BreadIcon} title="Bread" />
-        <MealTypeCard icon={BreakfastIcon} title="Breakfast" />
-        <MealTypeCard icon={SoupIcon} title="Soup" />
-        <MealTypeCard icon={BeverageIcon} title="Beverage" />
-        <MealTypeCard icon={SauceIcon} title="Sauce" />
-        <MealTypeCard icon={MarinadeIcon} title="Marinade" />
-        <MealTypeCard icon={SnackIcon} title="Snack" />
-        <MealTypeCard icon={DrinkIcon} title="Drink" />
+        <MealTypeCard
+          icon={BreakfastIcon}
+          title="Breakfast"
+          isHidden={isHidden}
+        />
+        <MealTypeCard icon={SoupIcon} title="Soup" isHidden={isHidden} />
+        <MealTypeCard
+          icon={BeverageIcon}
+          title="Beverage"
+          isHidden={isHidden}
+        />
+        <MealTypeCard icon={SauceIcon} title="Sauce" isHidden={isHidden} />
+        <MealTypeCard
+          icon={MarinadeIcon}
+          title="Marinade"
+          isHidden={isHidden}
+        />
+        <MealTypeCard icon={SnackIcon} title="Snack" isHidden={isHidden} />
+        <MealTypeCard icon={DrinkIcon} title="Drink" isHidden={isHidden} />
       </div>
       {/* end meal category card */}
+      <div className="w-full flex justify-center pb-20 mt-6">
+        <button
+          onClick={() => setIsHidden(!isHidden)}
+          className="flex flex-col items-center"
+        >
+          <h1 className="text-center font-semibold mb-1">
+            {isHidden ? "More" : "Less"}
+          </h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 animate-bounce"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d={
+                isHidden
+                  ? "M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  : "M4.5 15.75l7.5-7.5 7.5 7.5"
+              }
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };
