@@ -13,9 +13,11 @@ const FoodCard = ({ recipe }) => {
   };
 
   const imageUrl =
-    recipe.image && isValidUrl(recipe.image)
-      ? recipe.image
-      : `https://spoonacular.com/recipeImages/${recipe.image}`;
+    (recipe.image &&
+      (isValidUrl(recipe.image)
+        ? recipe.image
+        : `https://spoonacular.com/recipeImages/${recipe.image}`)) ||
+    "https://via.placeholder.com/300x150?text=No%20Image";
 
   return (
     <Link to={`/recipe/${recipe.id}`}>
