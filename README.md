@@ -1,5 +1,5 @@
 # Recipefy
-
+![Page Screenshot](public/screenshot/Screenshot.png)
 Recipefy is a web application that allows users to search for recipes based on keywords, meal types, or ingredients. It utilizes the Spoonacular API to provide a list of recipes with details such as recipe name, preparation time, and cooking instructions. Users can also filter recipes by meal type.
 
 ## Technologies
